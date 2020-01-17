@@ -55,7 +55,7 @@ passport.use(new FacebookStrategy({
   }
 ));
 
-////////////////// Mongoose Part /////////////////////////
+//////////////////////////// Mongoose Part /////////////////////////////
 
 mongoose.connect("mongodb://localhost:27017/userDB",
 {useNewUrlParser: true, useUnifiedTopology: true});
@@ -86,7 +86,7 @@ passport.deserializeUser(function(id, done) {
 });
 
 
-//////////////////// All Get Request /////////////////////
+//////////////////////////// All Get Request /////////////////////////
 
 app.get("/", function(req, res){
   res.render("home");
@@ -143,7 +143,7 @@ app.get("/submit", function(req, res){
 });
 
 
-////////////////// All Post Request //////////////////////
+//////////////////////////////// All Post Request ///////////////////////////////
 
 app.post("/register", function(req, res){
   User.register({username: req.body.username}, req.body.password, function(err, user){
@@ -194,7 +194,7 @@ app.post("/submit", function(req, res){
   });
 });
 
-//////////////// Listening /////////////////////////////
+//////////////////////////// Listening /////////////////////////////
 
 app.listen(3000, function(err){
   console.log("Server is running on port 3000");
